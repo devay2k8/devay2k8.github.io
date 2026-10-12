@@ -1,8 +1,8 @@
 # PD Nexus branding policy
 
-This policy applies to every existing and future PD Nexus application.
+This text-only policy applies to every existing and future PD Nexus application. Keep each application's own name, icon, and identity.
 
-## Approved text-only branding
+## Approved wording
 
 Use exactly:
 
@@ -12,26 +12,25 @@ Use exactly:
 
 Support: [pdnexus.apps@gmail.com](mailto:pdnexus.apps@gmail.com)
 
-Keep this spelling, capitalization, punctuation, and tagline unchanged.
+Keep the spelling, capitalization, punctuation, and tagline unchanged. Use these words, not a PD Nexus logo or graphic.
 
-## No-logo policy
+## No-logo rule
 
-- Do not add a PD Nexus logo, symbol, graphic, or registered trademark symbol.
-- Do not create new PD Nexus logo assets.
-- Do not modify an application's existing icon.
-- Do not replace or rename an application's individual identity.
+- Do not add or create a PD Nexus logo, symbol, graphic, or registered-trademark mark.
+- Do not modify existing application icons or replace individual app branding.
+- Do not introduce registered-trademark symbols in the application.
 
 ## Required placements
 
-- Splash or loading screen: show the small text `Envisioned by PD Nexus` without delaying startup.
-- Settings → About: show the creator credit, tagline, application version, and support email.
-- Settings → Feedback & Support: provide a functional feedback flow addressed to `pdnexus.apps@gmail.com` that does not transmit anything without user action.
-- Email signatures: use the approved text-only creator credit, tagline, and support address.
+- Splash or first screen: show the small text `Envisioned by PD Nexus` where appropriate, without adding startup delay.
+- Settings → About: show the creator credit, tagline, current application version, and support email.
+- Settings → Feedback & Support: provide a functional, platform-appropriate feedback flow addressed to `pdnexus.apps@gmail.com`. Let the user review and choose to send. Do not silently transmit feedback or attach a document or diagnostics without explicit user review and consent.
+- Email signatures: use the approved creator credit, tagline, and support address as text only.
 
 ## Change safety
 
-- Preserve existing features, workflows, data structures, storage paths, and backend behavior unless a separate request explicitly authorizes a change.
+- Preserve existing features, workflows, data structures, storage paths, app identities, and backend behavior unless a separate request explicitly approves a change.
 - Preserve privacy, security, testing, and no-regression requirements.
-- Do not implement a PD Nexus logo unless explicitly authorized by a later instruction.
+- Do not implement a PD Nexus logo until explicitly authorized.
 
-This policy supersedes earlier logo-related requirements.
+This policy supersedes earlier logo-related instructions. There is no separate Feedback & Support master prompt; this policy is the current requirement.
