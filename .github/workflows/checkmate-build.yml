@@ -41,7 +41,8 @@ jobs:
 
       - name: Verify and extract source
         run: |
-          echo "912f2e689d09e0f01a351f6392dc7d9d423aba1314b5c245bbf1fe0784ab5318  downloads/CheckMate-build-source.zip" | sha256sum -c -
+          echo "57cc820e8f28414297b121e4e3e27ba83248b808e3a70815b6c3ec583317ea58  downloads/CheckMate-build-source.zip" | sha256sum -c -
+          unzip -t downloads/CheckMate-build-source.zip
           mkdir -p checkmate-build
           unzip -q downloads/CheckMate-build-source.zip -d checkmate-build
           test -f checkmate-build/CheckMate-v2.0.0-source/settings.gradle
