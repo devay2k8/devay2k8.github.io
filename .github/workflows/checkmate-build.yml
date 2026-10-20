@@ -1,0 +1,71 @@
+name: Build CheckMate APK
+
+on:
+  push:
+    branches:
+      - checkmate-build-20261020
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Android SDK
+        run: |
+          mkdir -p "$HOME/android-sdk/cmdline-tools"
+          curl -fsSL "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip" -o /tmp/cmdline-tools.zip
+          unzip -q /tmp/cmdline-tools.zip -d /tmp/android-cli
+          mv /tmp/android-cli/cmdline-tools "$HOME/android-sdk/cmdline-tools/latest"
+          echo "ANDROID_HOME=$HOME/android-sdk" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$HOME/android-sdk" >> "$GITHUB_ENV"
+          echo "$HOME/android-sdk/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
+          yes | "$HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null || true
+          "$HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Verify and extract source
+        run: |
+          echo "912f2e689d09e0f01a351f6392dc7d9d423aba1314b5c245bbf1fe0784ab5318  downloads/CheckMate-build-source.zip" | sha256sum -c -
+          mkdir -p checkmate-build
+          unzip -q downloads/CheckMate-build-source.zip -d checkmate-build
+          test -f checkmate-build/CheckMate-v2.0.0-source/settings.gradle
+          test -f checkmate-build/CheckMate-v2.0.0-source/app/src/main/java/com/pdnexus/rentcheck/MainActivity.java
+
+      - name: Build APK
+        working-directory: checkmate-build/CheckMate-v2.0.0-source
+        run: gradle :app:assembleDebug --stacktrace
+
+      - name: Verify package and signature
+        run: |
+          APK="checkmate-build/CheckMate-v2.0.0-source/app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee /tmp/checkmate-badging.txt
+          grep -F "package: name='com.pdnexus.rentcheck' versionCode='3' versionName='2.0.0'" /tmp/checkmate-badging.txt
+          grep -F "application-label:'CheckMate'" /tmp/checkmate-badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK" | tee /tmp/checkmate-signature.txt
+          sha256sum "$APK" | tee /tmp/checkmate-sha256.txt
+          cp "$APK" CheckMate-v2.0.0.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CheckMate-v2.0.0-APK
+          path: checkmate-build/CheckMate-v2.0.0-source/CheckMate-v2.0.0.apk
+          if-no-files-found: error
+          retention-days: 7
