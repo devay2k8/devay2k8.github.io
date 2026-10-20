@@ -1,0 +1,1 @@
+Build CheckMate v2.0.0 APK from the verified source archive.
