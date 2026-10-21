@@ -8,7 +8,7 @@ Support: [pdnexus.apps@gmail.com](mailto:pdnexus.apps@gmail.com)
 
 ## Your core habits stay on your device
 
-HabitMend stores habits, routines, pairs, daily check-ins and timestamped habit entries, voluntary notes, urge entries, reminder rules and history, and preferences in local SQLite storage. There is no required account, advertising, analytics, or automatic cloud sync. Android backup is disabled for app data.
+HabitMend stores habits, routines, pairs, daily check-ins and timestamped habit entries, voluntary notes, urge entries, reminder rules and history, and preferences in local SQLite storage. Home layout choices and personal SOS actions, including any optional timer and associated Break habit, are stored locally with preferences. Choosing a suggested or personal SOS action does not automatically record an urge or contact another person. There is no required account, advertising, analytics, or automatic cloud sync. Android backup is disabled for app data.
 
 Local data uses Android's app sandbox. HabitMend does not add database encryption. Your device's security, encryption, and screen lock still matter. Uninstalling ordinarily removes app-private data; user-exported copies remain where you saved them.
 
