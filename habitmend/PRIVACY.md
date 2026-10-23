@@ -4,46 +4,43 @@ Last updated: 23 October 2026
 
 Envisioned by PD Nexus  
 IDEAS • APPS • IMPACT  
-Support: [pdnexus.apps@gmail.com](mailto:pdnexus.apps@gmail.com)
+Support: pdnexus.apps@gmail.com
 
-## Your core habits stay on your device
+## Core habits and local storage
 
-HabitMend stores habits, routines, pairs, daily check-ins and timestamped habit entries, voluntary notes, urge entries, reminder rules and history, and preferences in local SQLite storage. Home layout choices and personal SOS actions, including any optional timer and associated Break habit, are stored locally with preferences. Choosing a suggested or personal SOS action does not automatically record an urge or contact another person. There is no required account, advertising, analytics, or automatic cloud sync. Android backup is disabled for app data.
+HabitMend stores the habits, goals, schedules, habit pairs, repeated entries and Undo history, check-ins, voluntary urge notes, reminders, Home preferences, font-size choice, themes, and custom SOS actions you create in local app storage on your phone. No account, advertising SDK, analytics SDK, or automatic cloud sync is required. Android backup is disabled for app data. App-private storage is protected by Android's sandbox, but HabitMend does not add separate database encryption. Protect your device and any exported copy with a screen lock and a trusted destination.
 
-Local data uses Android's app sandbox. HabitMend does not add database encryption. Your device's security, encryption, and screen lock still matter. Uninstalling ordinarily removes app-private data; user-exported copies remain where you saved them.
+## Optional reminders and app-use guidance
 
-## Optional reminders
+If you allow notifications, HabitMend schedules reminders locally. Lock-screen text is generic by default. Optional screen-use nudges use Android Usage Access only for apps you select and check approximate app-use totals periodically. Android may delay or skip background work. App-use choices and totals remain on the phone. HabitMend does not read Digital Wellbeing's private database; the Digital Wellbeing guide opens Android's own controls and uses only app-use information separately authorized to HabitMend.
 
-Notifications require your choice and Android permission. They are scheduled locally from times and days you enter or suggestions based on your voluntary entries. Text is generic by default. Private habit names stay hidden. Detailed previews require your choice. Android may delay reminders. No internal urge detection or content monitoring is performed.
+## Optional selected-app Trigger Guard and Focus
 
-## Optional screen-use nudges
+If you choose apps and grant Usage Access, overlay permission, and notifications, Trigger Guard can notice when one of those apps opens and show a dismissible SOS, replacement, or Continue choice. It checks foreground package names and timing locally. A visible notification offers a one-hour pause. Prompts have a cooldown and may be missed if Android restricts background services. Focus uses the same types of permissions only during a session you start, has a visible stop control, and remains voluntary. Selected app names and usage observations are not sent to PD Nexus or the optional AI service.
 
-If you opt in, select apps, and grant Android Usage Access and notification permission, HabitMend periodically checks local app-use totals and recent foreground app events for the apps you selected. It may show a generic pause reminder after your chosen threshold. Android schedules checks about every 15 minutes or later under battery controls; an alert can be delayed or missed. The feature does not detect scrolling, read screens, messages, or browsing content, or connect directly to Digital Wellbeing. Selected apps, use totals, thresholds, and alert counts remain on the device and are not sent to AI or PD Nexus. Quiet hours and your configured daily reminder limit apply. Turning the option off cancels future checks. Revoking Usage Access stops checks and is reflected when HabitMend reopens. Delete all my data clears these native preferences.
+## Optional links, website domains, and on-screen phrases
 
-## Optional Android app pause
+You may deliberately open or share a website or video link through HabitMend. The app compares that link with rules you saved and offers a pause. Shared-link processing occurs on the device; a link opens in another app only when you choose Continue. HabitMend does not automatically identify every video or page inside another app.
 
-Only if you enable it, select apps, grant usage access and display-over-apps permission, and start a focus session, HabitMend checks foreground package events locally and displays a pause over selected apps. It does not read screen contents, browsing history, messages, contacts, microphone input, or location. A visible foreground notification and the pause screen let you end the session. Permission revocation or Android controls can stop this feature. Launcher app names and choices stay on the phone and are not sent to AI.
+Website Guard is a **separate opt-in**. If you accept its disclosure and Android VPN permission, it creates a local DNS-only VPN route so the phone's DNS requests can be compared with website domains you chose. HabitMend forwards those requests to your current network's configured DNS resolver. The resolver and your network provider can process DNS requests under their own policies, as they normally would. HabitMend does not route general app traffic, keep a browsing log, transmit your chosen rules to PD Nexus, or use a remote HabitMend VPN server. A visible notification lets you pause or stop it. Android allows only one active VPN; enabling it may replace another VPN. DNS caching, encrypted/private DNS, browser-specific resolvers, and app behavior may prevent detection. It cannot identify an exact page or video and is not a guaranteed content blocker. If the local tunnel cannot start, HabitMend stops it so Android restores normal routing.
 
-## Optional AI connections
+On-screen rules are another **separate opt-in**. If you grant Android Accessibility access, HabitMend can inspect text and descriptions exposed on screen by only the apps you selected, compare them with phrases you chose, and show a dismissible prompt. Editable and password fields are skipped. Screen text is compared temporarily on the phone and is not saved or sent to PD Nexus. Some apps do not expose useful text; a title or website may be missed. You can disable the feature in HabitMend or revoke the Android permission. This feature is for habit support, not disability assistance, and is not a guaranteed filter or block.
 
-No AI service or provider subscription is bundled. You may connect this phone to a compatible operator-hosted HTTPS service. The connection screen shows the operator's policy before pairing. A one-use code obtains a phone token; Android SecureStore holds the token. Provider API keys remain on the operator's server.
+The app stores your trigger rules and consent choices locally. Delete all my data clears these rules and the native guard preferences, and stops the services. Turning an individual guard off stops its future checks. Android system permission records may remain until you revoke them in Settings.
 
-Each AI request needs your review. The question you type is shared with the selected operator and its AI provider. Habit title and today's check-in count are independent optional fields, off by default. Private titles can be shared only if you deliberately include and review them. The habit database, notes, and history are not automatically uploaded.
+## Optional AI connection
 
-The included gateway implementation stores token hashes, expiry, daily quota counters, and temporary pairing-code hashes for up to 30 days. It uses in-memory hashed network addresses for connection abuse controls within hourly windows. It does not store ordinary prompts or replies and requests provider responses with storage disabled. If you choose to report an AI response, a review screen shows the response, reason, and optional comment before sending. Only those fields are stored with a hashed phone token for operator safety review for up to 30 days. Reports are not sent to the AI provider. The service operator can review and delete them. This does not eliminate the provider's abuse-monitoring retention; applicable provider logs may remain up to 30 days unless the operator has an approved retention exception. Hosting and reverse-proxy behavior and the operator's final policy must also be reviewed.
+No AI subscription or service is bundled. If you connect to a compatible operator-hosted HTTPS service, HabitMend shows its policy and asks you to review each request before sending. Your typed question goes to the chosen operator and its AI provider. A habit title and today's entry count are independent optional additions, off by default. Private titles are shared only if you deliberately include and review them. The habit database, trigger rules, browsing domains, screen text, urge history, and notes are not automatically sent.
 
-Messages and answers remain only in the app screen's memory until you leave that screen. Disconnect removes the phone credential and attempts to revoke it at the service. If offline, the service token can remain until its expiry or operator revocation. Disconnect or local deletion cannot erase provider logs or already processed data. Use the connected operator's privacy contact for those requests.
+The included gateway stores hashed phone tokens, expiration and quota counters, and short-lived pairing-code hashes for up to 30 days. It does not store ordinary prompts or replies, although the chosen provider may retain abuse-monitoring logs under its own policy. A reviewed AI-response report sends only the shown response, reason, and optional comment to the operator for up to 30 days. Disconnect removes the credential on the phone and attempts server revocation; if offline, a server token remains until expiry or operator action. Consult the chosen operator's policy for its hosting and deletion practices.
 
-## Exports, feedback, and deletion
+## Export, feedback, deletion, and contact
 
-Exports are readable JSON containing habit data, including private notes and voluntary entries. Credentials are excluded. A confirmation explains this before you choose a destination or sharing app. A copy remains in private app cache so the receiving app can read it. A new export overwrites this copy, and Delete all my data clears it. Third-party destinations handle saved files under their own policies.
+Exports are readable JSON and may contain sensitive habit names, notes, and entries. They exclude connection credentials. A copy is kept temporarily in app-private cache for sharing; a new export overwrites it, and Delete all my data clears it. The destination app controls copies saved elsewhere.
 
-Feedback is reviewed in HabitMend and then composed in your email app addressed to pdnexus.apps@gmail.com. Nothing is sent automatically. No diagnostic logs, screenshots, habit records, location, or attachments are added. Any personal details you choose to write are delivered through your email provider and can be received by support.
+Feedback is reviewed in HabitMend and composed in your email app addressed to pdnexus.apps@gmail.com. Nothing is sent automatically. The app does not attach logs, screenshots, or habit records; text you choose to write is handled by your email provider and support recipient.
 
-Delete all my data removes local SQLite records and preferences, secure phone credentials, native app-pause and screen-use preferences, the active focus guard, scheduled screen-use checks, and pending reminders. This requires typed confirmation and a second review. It does not remove exported copies, emails you sent, or service/provider retention.
+Delete all my data requires typed confirmation and a second review. It removes local app records and settings, secure phone credentials, native guard preferences, the active Focus/guard services, and scheduled reminders. It cannot remove copies you exported, emails sent, or data already handled by an AI operator/provider.
 
-## Your choices and contact
+Core habit tracking works offline. HabitMend is a wellness and habit-support tool, not a medical device or emergency service. We do not sell habit data or use sensitive habits for advertising. Privacy and support questions: **pdnexus.apps@gmail.com**.
 
-All advanced features are optional. You can change notification privacy, disable nudges or AI, revoke Android permissions, disconnect a service, export, or delete local data in Settings. Core habits remain available offline. HabitMend is an educational habit tool, not a medical device or substitute for professional care. Do not use it as an emergency service.
-
-Privacy and app support: [pdnexus.apps@gmail.com](mailto:pdnexus.apps@gmail.com). Include only information you are comfortable sharing. We do not sell habit data or use sensitive habits for advertising.
