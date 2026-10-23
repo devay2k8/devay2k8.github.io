@@ -1,6 +1,6 @@
 # HabitMend privacy policy
 
-Last updated: 21 October 2026
+Last updated: 23 October 2026
 
 Envisioned by PD Nexus  
 IDEAS • APPS • IMPACT  
@@ -15,6 +15,10 @@ Local data uses Android's app sandbox. HabitMend does not add database encryptio
 ## Optional reminders
 
 Notifications require your choice and Android permission. They are scheduled locally from times and days you enter or suggestions based on your voluntary entries. Text is generic by default. Private habit names stay hidden. Detailed previews require your choice. Android may delay reminders. No internal urge detection or content monitoring is performed.
+
+## Optional screen-use nudges
+
+If you opt in, select apps, and grant Android Usage Access and notification permission, HabitMend periodically checks local app-use totals and recent foreground app events for the apps you selected. It may show a generic pause reminder after your chosen threshold. Android schedules checks about every 15 minutes or later under battery controls; an alert can be delayed or missed. The feature does not detect scrolling, read screens, messages, or browsing content, or connect directly to Digital Wellbeing. Selected apps, use totals, thresholds, and alert counts remain on the device and are not sent to AI or PD Nexus. Quiet hours and your configured daily reminder limit apply. Turning the option off cancels future checks. Revoking Usage Access stops checks and is reflected when HabitMend reopens. Delete all my data clears these native preferences.
 
 ## Optional Android app pause
 
@@ -36,7 +40,7 @@ Exports are readable JSON containing habit data, including private notes and vol
 
 Feedback is reviewed in HabitMend and then composed in your email app addressed to pdnexus.apps@gmail.com. Nothing is sent automatically. No diagnostic logs, screenshots, habit records, location, or attachments are added. Any personal details you choose to write are delivered through your email provider and can be received by support.
 
-Delete all my data removes local SQLite records and preferences, secure phone credentials, native app-pause preferences, the active focus guard, and pending reminders. This requires typed confirmation and a second review. It does not remove exported copies, emails you sent, or service/provider retention.
+Delete all my data removes local SQLite records and preferences, secure phone credentials, native app-pause and screen-use preferences, the active focus guard, scheduled screen-use checks, and pending reminders. This requires typed confirmation and a second review. It does not remove exported copies, emails you sent, or service/provider retention.
 
 ## Your choices and contact
 
