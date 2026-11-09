@@ -1,6 +1,6 @@
 # HabitMend privacy policy
 
-Last updated: 23 October 2026
+Last updated: 9 November 2026
 
 Envisioned by PD Nexus  
 IDEAS • APPS • IMPACT  
@@ -14,9 +14,15 @@ HabitMend stores the habits, goals, schedules, habit pairs, repeated entries and
 
 If you allow notifications, HabitMend schedules reminders locally. Lock-screen text is generic by default. Optional screen-use nudges use Android Usage Access only for apps you select and check approximate app-use totals periodically. Android may delay or skip background work. App-use choices and totals remain on the phone. HabitMend does not read Digital Wellbeing's private database; the Digital Wellbeing guide opens Android's own controls and uses only app-use information separately authorized to HabitMend.
 
-## Optional selected-app Trigger Guard and Focus
+## Optional Activity support
 
-If you choose apps and grant Usage Access, overlay permission, and notifications, Trigger Guard can notice when one of those apps opens and show a dismissible SOS, replacement, or Continue choice. It checks foreground package names and timing locally. A visible notification offers a one-hour pause. Prompts have a cooldown and may be missed if Android restricts background services. Focus uses the same types of permissions only during a session you start, has a visible stop control, and remains voluntary. Selected app names and usage observations are not sent to PD Nexus or the optional AI service.
+Activity support is off until you enable it. You choose specific installed launcher apps, a schedule, a delay, and an optional linked Break habit. With Android Usage Access and notification permission, HabitMend checks selected app activity locally and can send a discreet notification after the selected app stays open. Lock-screen wording is generic. A visible status notification lets you stop Activity support. Your selected rules, the last result, and notification timing are kept on your phone; they are not sent to PD Nexus or the optional AI service. Android may delay or miss activity events or notifications. Activity support does not read screen text, route network traffic, or draw over another app. Turning it off stops checks and keeps the rules you saved.
+
+## Optional advanced Trigger Guard and Focus
+
+The older Trigger Guard, Website Guard, and on-screen rules are off behind a separate Advanced monitoring switch. Existing rules stay saved, but upgrading to this version turns those older monitors off until you choose to review them again. If you enable Advanced monitoring, each guard still requires its own switch and Android permission. Turning Advanced monitoring off stops those guards while retaining saved rules.
+
+If you choose apps and separately grant Usage Access, overlay permission, and notifications, the older Trigger Guard can notice when one of those apps opens and show a dismissible SOS, replacement, or Continue choice. It checks foreground package names and timing locally. A visible notification offers a one-hour pause. Prompts have a cooldown and may be missed if Android restricts background services. Focus uses the same types of permissions only during a session you start, has a visible stop control, and remains voluntary. Selected app names and usage observations are not sent to PD Nexus or the optional AI service.
 
 ## Optional links, website domains, and on-screen phrases
 
